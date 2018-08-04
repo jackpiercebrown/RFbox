@@ -2,7 +2,9 @@
 Matlab toolbox for the simulation and estimation of random fields.
 
 # CMD
-Simulation of random fields using covariance matrix decomposition (CMD)
+Simulation of random fields using covariance matrix decomposition (CMD).
+
+More than four different correlation functions
 
 ![Alt text](realisations.png?raw=true "Optional Title")
 
