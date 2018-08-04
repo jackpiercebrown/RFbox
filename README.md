@@ -8,6 +8,8 @@ Simulation of random fields using covariance matrix decomposition (CMD).
 
 ![Alt text](realisations.png?raw=true "Optional Title")
 
+* Conditional simulation through fixed points:
+
 # FFT
 Simulation of random fields using fast Fourier transform (FFT)
 
