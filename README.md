@@ -15,5 +15,7 @@ Simulation of random fields using covariance matrix decomposition (CMD).
 # FFT
 Simulation of random fields using fast Fourier transform (FFT)
 
+![Alt text](2Dreal.png?raw=true "Optional Title")
+
 # Est
 Tools for the estimation of random fields including method of moments, maximum likelihood estimation and kriging.
