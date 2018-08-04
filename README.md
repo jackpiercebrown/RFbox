@@ -10,6 +10,8 @@ Simulation of random fields using covariance matrix decomposition (CMD).
 
 * Conditional simulation through fixed points:
 
+![Alt text](condSim.png?raw=true "Optional Title")
+
 * 1D or 2D fields thorugh either Cholesky or eigendecomposition of the covariance matrix.
 
 # FFT
