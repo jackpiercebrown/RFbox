@@ -23,3 +23,5 @@ Simulation of random fields using fast Fourier transform (FFT)
 
 # Est
 Tools for the estimation of random fields including method of moments, maximum likelihood estimation and kriging.
+
+![Alt text](krige.png?raw=true "Optional Title")
