@@ -15,6 +15,8 @@ Simulation of random fields using covariance matrix decomposition (CMD).
 # FFT
 Simulation of random fields using fast Fourier transform (FFT)
 
+* Choice of 4 spectral density functions
+
 * Fast simulation of large random fields
 
 ![Alt text](2Dreal.png?raw=true "Optional Title")
