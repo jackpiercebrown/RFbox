@@ -4,7 +4,7 @@ Matlab toolbox for the simulation and estimation of random fields.
 # CMD
 Simulation of random fields using covariance matrix decomposition (CMD)
 
-![Alt text](/realisations.jpg?raw=true "Optional Title")
+![Alt text](RFbox/realisations.jpg?raw=true "Optional Title")
 
 # FFT
 Simulation of random fields using fast Fourier transform (FFT)
