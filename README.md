@@ -23,7 +23,7 @@ Simulation of random fields using fast Fourier transform (FFT)
 
 ![Alt text](images/2Dreal.png?raw=true "Optional Title")
 
-# Est
+# Estimate
 Tools for the estimation of random fields including:
 
 * Method of moments
