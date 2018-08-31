@@ -36,7 +36,7 @@ fig2 = figure(2);
 plot(ACF2)
 
 % maximum likelihood estimation
-[thetaMLE,muMLE,sigmaMLE] = maxLfun(samples,points,corFun,0,lx);
+[thetaMLE,muMLE,sigmaMLE] = maxLfun(samples,points,corFun,0,lx)
 
 %% Example 2 - Kriging
 uncondPoints = linspace(0,8,1e3)';

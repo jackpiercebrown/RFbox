@@ -1,9 +1,0 @@
-corrFFT - autocorrelation using FFT technique
-corrPairs - autocorrelation by constructing pairs (non-FFT)
-fitACF - fits theoretical correlation model to autocorrelation data
-lag1corr - lag1 correlation for matrix input (many times series)
-lag1theta - returns theta value for correlation value and correlation function
-gaussLfun - multivariate Gaussian likelihood function (Fenton, 1999)
-maxLfun - finds value of theta (& mu, sigma) that maximises gaussLfun
-
-testScript - examples of calls to functions

@@ -1,34 +1,30 @@
-function [corrVec,covVec] = corrPairs(samples,flag,meanVal)
-% corrPairs computes the autocorrelation usiong non-FFT method by
-% constructing two vectors and computing sample correlation.
+function [corrVec,covVec] = corrPairs(samples,mu)
+% corrPairs - non-Fourier implementation of sample autocorrelation
 %
 % Inputs:
-% samples - nx by nSamples matrix of realisations
-% meanVal - mean value
-% flag - flag for denominator. Default is constant denominator producing
-% the same (damped) output as autocorr. If flag == 'varDenom' then ACF is
-% more accurate yet unstable for large lags.
+% -------
+%   samples       - nx by nSamples matrix of data
+%   mu (optional) - mean of random field
+%
+% Outputs:
+% --------
+%   acf - vector of correlations
+
+% Copyright Jack Pierce-Brown 2018
 
     [nLags,nSamples] = size(samples);
 
     if nargin < 2
-        flag = 0;
+        mu = mean(mean(samples));
     end
 
-    if nargin < 3
-        meanVal = mean(mean(samples));
-    end
-
-    samplesAdj = samples - meanVal;
+    samplesAdj = samples - mu;
 
     covVec = zeros(nLags,1);
 
     divisor = nLags;
 
     for iLag = 0:(nLags-1)
-        if strcmp(flag,'varDenom')
-            divisor = nLags - iLag;
-        end
         sum = 0;
         for iSample = 1:nSamples
             for ix = 1:(nLags - iLag)

@@ -1,31 +1,30 @@
-function [ acf ] = corrFFT(samplesMat,denomType,mu)
-% Adaptation of inbuilt function autocorr to allow for multiple
-% realisations, known mean and variable denominator.
+function [ acf ] = corrFFT(samples,mu)
+% corrFFT - adaptation of autocorr for multiple realisations
 %
-% Input:
-% samplesMat - nx by nSamples matrix of realisations
-% denomType (optional) - 'cnst' or 'var'
-% mu (optional) - if true mean is known
-    
-    if nargin < 2
-        denomType = 'cnst';
-    end
-    if nargin < 3
-        mu = mean(mean(samplesMat));
-    end
-    
-    [nx,~] = size(samplesMat);
+% Inputs:
+% -------
+%   samples       - nx by nSamples matrix of data
+%   mu (optional) - mean of random field
+%
+% Outputs:
+% --------
+%   acf - vector of correlations
 
-    nFFT = 2^(nextpow2(nx)+1);
-    F = fft(samplesMat-mu,nFFT);
-    F = F.*conj(F);
-    acf = ifft(mean(F,2));
-    acf = acf(1:nx);
-    if strcmp(denomType,'var')
-        acf = (nx./[nx:-1:1]').*acf;
-    end
+% Copyright Jack Pierce-Brown 2018
+    
+if nargin < 2
+    mu = mean(mean(samples));
+end
 
-    acf = acf./acf(1);
-    %acf = acf./max(abs(acf));
-    acf = real(acf);
+[nx,~] = size(samples);
+
+nFFT = 2^(nextpow2(nx)+1);
+F = fft(samples-mu,nFFT);
+F = F.*conj(F);
+acf = ifft(mean(F,2));
+acf = acf(1:nx);
+
+acf = acf./acf(1);
+acf = real(acf);
+
 end

@@ -1,20 +1,30 @@
 function [thetaMLE,muMLE,sigmaMLE,lval] = maxLfun(samples,points,corFun,lowerTheta,upperTheta)
-% This function finds the value of theta that maximises the likelihood 
-% function and the associated MLE values of mu and sigma.
+% maxLfun - returns parameter estimates that maximise Gaussian likelihood
 %
-% Input:
-% samples - nx by nSamples matrix
-% points - spatial locations of samples
-% corFun - desired correlation function: 'exp','sexp','tri'
+% Inputs:
+% -------
+% samples    - nx by nSamples matrix of data
+% points     - spatial locations of samples
+% corFun     - correlation function: 'markov','gauss','tri','poly'
+% lowerTheta - lower bound on the correlation length
+% upperTheta - upper bound on the correlation length
 %
+% Outputs:
+% --------
+% thetaMLE - estimate of the correlation length
+% muMLE    - estimate of the mean
+% sigmaMLE - estimate of the standard deviation
+% lval     - value of maximum likelihood
 
-    f = @(theta) -gaussLfun(samples,calcCorrMat(points,corFun,theta));
+% Copyright Jack Pierce-Brown 2018
 
-    thetaMLE = fminbnd(f,lowerTheta,upperTheta);
-    [lval,muMLE,sigmaMLE] = gaussLfun(samples,calcCorrMat(points,corFun,thetaMLE));
-    
-    if thetaMLE == upperTheta
-        printf('Consider increasing upperbound')
-    end
-    
+f = @(theta) -gaussLfun(samples,corMat(points,corFun,theta));
+
+thetaMLE = fminbnd(f,lowerTheta,upperTheta);
+[lval,muMLE,sigmaMLE] = gaussLfun(samples,corMat(points,corFun,thetaMLE));
+
+if thetaMLE == upperTheta
+    printf('Warning: consider increasing upperbound')
+end
+
 end
