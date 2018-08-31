@@ -6,11 +6,11 @@ Simulation of random fields using covariance matrix decomposition (CMD).
 
 * More than four different correlation functions with either normal or lognormal marginal distributions:
 
-![Alt text](images\realisations.png?raw=true "Optional Title")
+![Alt text](images/realisations.png?raw=true "Optional Title")
 
 * Conditional simulation through fixed points:
 
-![Alt text](condSim.PNG?raw=true "Optional Title")
+![Alt text](images/condSim.PNG?raw=true "Optional Title")
 
 * 1D or 2D fields thorugh either Cholesky or eigendecomposition of the covariance matrix.
 
@@ -21,7 +21,7 @@ Simulation of random fields using fast Fourier transform (FFT)
 
 * Fast simulation of large anisotropic random fields
 
-![Alt text](2Dreal.png?raw=true "Optional Title")
+![Alt text](images/2Dreal.png?raw=true "Optional Title")
 
 # Est
 Tools for the estimation of random fields including:
@@ -30,4 +30,4 @@ Tools for the estimation of random fields including:
 * Maximum likelihood estimation
 * Kriging.
 
-![Alt text](krige.png?raw=true "Optional Title")
+![Alt text](images/krige.png?raw=true "Optional Title")
