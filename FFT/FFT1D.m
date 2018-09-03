@@ -75,6 +75,6 @@ for iSample = 1:nSamples
     fieldRealisations(:,iSample) = mu + realField;
 end
 
-samples = fieldRealisations(1:nx,:);
+samples = fieldRealisations(1:nx0,:);
 
 end
